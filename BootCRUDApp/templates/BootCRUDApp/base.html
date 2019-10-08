@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'BootCRUDApp/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'BootCRUDApp/css/base.css' %}">
+    <script src="{% static 'BootCRUDApp/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'BootCRUDApp/js/bootstrap.js' %}"></script>
+</head>
+<body>
+
+<header class="jumbotron">
+    <h1>Testing Bootstrap</h1>
+</header>
+
+{% block content %}
+<h1>In the Index Page</h1>
+{% endblock content %}
+
+</body>
+</html>
