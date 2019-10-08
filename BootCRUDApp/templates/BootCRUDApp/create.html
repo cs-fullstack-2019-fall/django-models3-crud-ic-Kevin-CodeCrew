@@ -1,0 +1,10 @@
+{% extends 'BootCRUDApp/base.html' %}
+
+{% block content %}
+<h1>In the Create Page</h1>
+<form method='POST'>
+    {{ form.as_p }}
+    <button type="submit">Add Item</button>
+    {% csrf_token %}
+</form>
+{% endblock content %}
