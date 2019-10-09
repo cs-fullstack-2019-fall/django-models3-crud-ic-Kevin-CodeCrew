@@ -5,10 +5,15 @@ Items Currently for Sale
 {% endblock subtitle %}
 
 {% block content %}
+{% if user.is_authenticated %}
 {% for itm in item_list %}
 <p>
-    <a href="{% url 'display' itm.id  %}">{{ itm }}</a>
+    <a href="{% url 'display' itm.id %}">{{ itm }}</a>
 </p>
 {% endfor %}
+<br/><a href="{% url 'create' %}">Create New Item</a>
+{% else %}
+<a href="{% url 'logIn' %}">Please Login to see this page<</a>
+{% endif %}
 
 {% endblock content %}

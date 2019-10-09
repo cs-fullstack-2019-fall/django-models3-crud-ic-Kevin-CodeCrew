@@ -14,4 +14,9 @@
     <li>{{item.itm_description}}</li>
     <li>{{item.itm_price}}</li>
 </ul>
+{# add links to edit or delete #}
+<a href="{% url 'edit' item.id %}">Edit Item</a>
+<br/><a href="{% url 'delete' item.id %}">Delete Item </a>
+<br/><a href="{% url 'list' %}">Go Home </a>
+
 {% endblock content %}
