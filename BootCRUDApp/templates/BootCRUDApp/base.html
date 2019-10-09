@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'BootCRUDApp/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'BootCRUDApp/css/base.css' %}">
-    <script src="{% static 'BootCRUDApp/js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'BootCRUDApp/js/bootstrap.js' %}"></script>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}
+            Point of Entry
+            {% endblock title %}
+        </title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'BootCRUDApp/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'BootCRUDApp/css/base.css' %}">
 
-<header class="jumbotron">
-    <h1>Testing CRUD</h1>
-</header>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="display-4"> Junk in the Trunk For Sale</h1>
+                <p class="lead">This is a simple site to sell yer crap.</p>
+                <hr class="my-4">
+                <p>Time to clear that Rat Nest of yours and make some $$$!</p>
+            </div>
 
-{% block content %}
-<h1>In the Index Page</h1>
-{% endblock content %}
+            <h2>
+                {% block subtitle %}
+                Base Landing Page
+                {% endblock subtitle %}
+            </h2>
 
-</body>
+            {% block content %}
+            <h1>In the Index Page</h1>
+            {% endblock content %}
+            {# Basic footer #}
+            <footer>
+                {% if can_create %}
+                
+                {% endif %}
+            </footer>
+        </div>
+        
+        {# JavaScript for Bootstrap #}
+        <script src="{% static 'BootCRUDApp/js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'BootCRUDApp/js/bootstrap.js' %}"></script>
+    </body>
 </html>

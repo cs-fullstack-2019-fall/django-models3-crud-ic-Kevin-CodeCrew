@@ -1,7 +1,10 @@
 {% extends 'BootCRUDApp/base.html' %}
 
+{% block subtitle %}
+Items Currently for Sale
+{% endblock subtitle %}
+
 {% block content %}
-<h1>In the List Page</h1>
 {% for itm in item_list %}
 <p>
     <a href="{% url 'display' itm.id  %}">{{ itm }}</a>

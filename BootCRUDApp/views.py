@@ -41,8 +41,12 @@ def edit(request, pk):
             return HttpResponseRedirect('/list/')
     return render(request, 'BootCRUDApp/edit.html', {'form': form})
 
-
+# This view will render a web page displaying a single item for sale. The entry cannot be deleted
 def display(request, pk):
     item = ItemModel.objects.get(pk=pk)
+    injection_queue = {
+        'item':item,
+        'title': item.itm_name,
 
+    }
     return render(request, 'BootCRUDApp/display.html', {'item': item})
